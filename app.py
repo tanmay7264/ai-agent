@@ -69,6 +69,10 @@ with st.sidebar:
         placeholder=f"Paste your {provider} key here",
     )
     st.caption(f"{info['note']} Get one at [{info['signup_url']}]({info['signup_url']})")
+    if api_key:
+        st.success("✅ API key loaded")
+    else:
+        st.warning("⚠️ No API key found — enter it above or add to Streamlit secrets")
 
     st.divider()
     st.header("📂 Documents")
@@ -139,8 +143,12 @@ if prompt := st.chat_input("Ask anything about your documents…"):
             st.markdown(prompt)
 
         with st.chat_message("assistant"):
-            with st.spinner("Thinking…"):
-                result = st.session_state.agent({"question": prompt})
+            try:
+                with st.spinner("Thinking…"):
+                    result = st.session_state.agent({"question": prompt})
+            except Exception as e:
+                st.error(f"❌ LLM Error: {str(e)}")
+                st.stop()
 
             answer = result["answer"]
             source_docs = result.get("source_documents", [])
