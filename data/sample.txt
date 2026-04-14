@@ -1,0 +1,43 @@
+Artificial Intelligence Overview
+=================================
+
+Artificial Intelligence (AI) is the simulation of human intelligence processes by machines,
+especially computer systems. It includes learning, reasoning, and self-correction.
+
+Machine Learning (ML)
+---------------------
+Machine learning is a subset of AI that enables systems to automatically learn from experience
+without being explicitly programmed. Key types include:
+- Supervised Learning: trained on labeled data
+- Unsupervised Learning: finds hidden patterns in unlabeled data
+- Reinforcement Learning: learns via rewards and penalties
+
+Retrieval-Augmented Generation (RAG)
+-------------------------------------
+RAG combines two components:
+1. A retriever that searches a knowledge base for relevant context
+2. A generator (LLM) that produces answers using that context
+
+This allows LLMs to answer questions about documents they were never trained on,
+reducing hallucinations and improving factual accuracy.
+
+Large Language Models (LLMs)
+------------------------------
+LLMs are neural networks trained on massive text corpora. They can generate coherent text,
+summarize documents, answer questions, translate languages, and write code.
+Popular open-source LLMs include LLaMA, Mistral, and Phi.
+
+Vector Databases
+-----------------
+Vector databases store numerical representations (embeddings) of text. They enable
+fast semantic search — finding text that is *meaningfully* similar, not just keyword-matching.
+FAISS (Facebook AI Similarity Search) is a widely used local vector database.
+
+LangChain
+----------
+LangChain is a Python framework for building applications powered by LLMs. It provides:
+- Document loaders (PDFs, text, web pages)
+- Text splitters for chunking long documents
+- Vector store integrations (FAISS, Chroma, Pinecone)
+- Memory for maintaining conversation history
+- Chains for combining multiple AI steps into pipelines
