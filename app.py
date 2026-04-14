@@ -36,9 +36,9 @@ PROVIDERS = {
     },
     "Gemini": {
         "models": [
-            "gemini-1.5-flash",
-            "gemini-1.5-pro",
             "gemini-2.0-flash",
+            "gemini-2.0-flash-lite",
+            "gemini-2.5-pro-preview-03-25",
         ],
         "key_env": "GOOGLE_API_KEY",
         "signup_url": "https://aistudio.google.com/app/apikey",
